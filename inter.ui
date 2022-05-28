@@ -206,7 +206,7 @@ font-weight: 800;</string>
 }</string>
     </property>
     <property name="text">
-     <string>Загрузить новое фото</string>
+     <string>Скачать CSV файл</string>
     </property>
     <property name="checkable">
      <bool>false</bool>
@@ -368,7 +368,7 @@ color: #fff;</string>
    <widget class="QGroupBox" name="Nameprogramm">
     <property name="geometry">
      <rect>
-      <x>890</x>
+      <x>900</x>
       <y>170</y>
       <width>311</width>
       <height>71</height>
@@ -458,6 +458,43 @@ color: #00FB00;</string>
      <bool>false</bool>
     </property>
    </widget>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>670</y>
+      <width>351</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>-1</pointsize>
+      <weight>99</weight>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">.QPushButton {
+	font-style: normal;
+	font-weight: 800;
+	font-size: 18px;
+	color: #fff;
+	border: 1px solid #fff;
+}
+.QPushButton:hover {
+	border: 1px solid #00FB00;
+	color: #00FB00;
+}</string>
+    </property>
+    <property name="text">
+     <string>Загрузить новое фото</string>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+   </widget>
    <zorder>label_4</zorder>
    <zorder>groupBox</zorder>
    <zorder>groupBox_3</zorder>
@@ -465,6 +502,7 @@ color: #00FB00;</string>
    <zorder>groupBox_2</zorder>
    <zorder>Nameprogramm</zorder>
    <zorder>pushButton</zorder>
+   <zorder>pushButton_2</zorder>
   </widget>
  </widget>
  <customwidgets>
