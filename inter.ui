@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1220</width>
-    <height>773</height>
+    <height>767</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -128,7 +128,7 @@ font-weight: 800;</string>
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap>11.jpg</pixmap>
+      <pixmap>../../../.designer/backup/11.jpg</pixmap>
      </property>
      <property name="scaledContents">
       <bool>true</bool>
@@ -402,26 +402,26 @@ color: #00FB00;</string>
      </property>
     </widget>
    </widget>
-   <widget class="QLabel" name="Background">
+   <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>-60</x>
-      <y>-10</y>
-      <width>1280</width>
-      <height>800</height>
+      <x>4</x>
+      <y>0</y>
+      <width>1211</width>
+      <height>761</height>
      </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">.QFileDialog { background-color: white }</string>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>Back 2.png</pixmap>
+     <pixmap>../../../Downloads/Telegram Desktop/Back 2.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
     </property>
    </widget>
-   <zorder>Background</zorder>
+   <zorder>label_4</zorder>
    <zorder>groupBox</zorder>
    <zorder>groupBox_3</zorder>
    <zorder>btn_download</zorder>
