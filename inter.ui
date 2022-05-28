@@ -175,9 +175,9 @@ font-weight: 800;</string>
    <widget class="QPushButton" name="btn_download">
     <property name="geometry">
      <rect>
-      <x>270</x>
+      <x>240</x>
       <y>610</y>
-      <width>201</width>
+      <width>231</width>
       <height>51</height>
      </rect>
     </property>
@@ -206,7 +206,7 @@ font-weight: 800;</string>
 }</string>
     </property>
     <property name="text">
-     <string>Скачать фото</string>
+     <string>Загрузить новое фото</string>
     </property>
     <property name="checkable">
      <bool>false</bool>
@@ -405,7 +405,7 @@ color: #00FB00;</string>
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>4</x>
+      <x>-20</x>
       <y>0</y>
       <width>1211</width>
       <height>761</height>
@@ -421,12 +421,50 @@ color: #00FB00;</string>
      <bool>true</bool>
     </property>
    </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>610</y>
+      <width>201</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>-1</pointsize>
+      <weight>99</weight>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">.QPushButton {
+	font-style: normal;
+	font-weight: 800;
+	font-size: 18px;
+	color: #fff;
+	border: 1px solid #fff;
+}
+.QPushButton:hover {
+	border: 1px solid #00FB00;
+	color: #00FB00;
+}</string>
+    </property>
+    <property name="text">
+     <string>Скачать фото</string>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+   </widget>
    <zorder>label_4</zorder>
    <zorder>groupBox</zorder>
    <zorder>groupBox_3</zorder>
    <zorder>btn_download</zorder>
    <zorder>groupBox_2</zorder>
    <zorder>Nameprogramm</zorder>
+   <zorder>pushButton</zorder>
   </widget>
  </widget>
  <customwidgets>
