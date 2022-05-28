@@ -19,7 +19,7 @@ class Ui_MainWindow(object):
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.groupBox = QtWidgets.QGroupBox(self.centralwidget)
-        self.groupBox.setGeometry(QtCore.QRect(20, 110, 424, 130))
+        self.groupBox.setGeometry(QtCore.QRect(10, 110, 424, 130))
         self.groupBox.setStyleSheet(".QGroupBox {\n"
 "    border: 2px solid #fff;\n"
 "}")
@@ -46,36 +46,8 @@ class Ui_MainWindow(object):
 "font-weight: 800;")
         self.label.setTextFormat(QtCore.Qt.AutoText)
         self.label.setObjectName("label")
-        self.groupBox_2 = QtWidgets.QGroupBox(self.centralwidget)
-        self.groupBox_2.setGeometry(QtCore.QRect(20, 330, 451, 241))
-        self.groupBox_2.setStyleSheet(".QGroupBox {\n"
-"    border: 2px solid #fff;\n"
-"}")
-        self.groupBox_2.setTitle("")
-        self.groupBox_2.setObjectName("groupBox_2")
-        self.radioButton = QtWidgets.QRadioButton(self.groupBox_2)
-        self.radioButton.setGeometry(QtCore.QRect(30, 130, 361, 21))
-        self.radioButton.setStyleSheet("font-weight: 800;\n"
-"font-size: 20px;\n"
-"color: #D9D9D9;")
-        self.radioButton.setObjectName("radioButton")
-        self.label_3 = QtWidgets.QLabel(self.groupBox_2)
-        self.label_3.setGeometry(QtCore.QRect(20, 20, 361, 61))
-        self.label_3.setMouseTracking(False)
-        self.label_3.setStyleSheet("font-style: normal;\n"
-"font-weight: 800;\n"
-"font-size: 24px;\n"
-"color: #fff;")
-        self.label_3.setWordWrap(True)
-        self.label_3.setObjectName("label_3")
-        self.radioButton_2 = QtWidgets.QRadioButton(self.groupBox_2)
-        self.radioButton_2.setGeometry(QtCore.QRect(30, 190, 401, 21))
-        self.radioButton_2.setStyleSheet("font-weight: 800;\n"
-"font-size: 20px;\n"
-"color: #D9D9D9;")
-        self.radioButton_2.setObjectName("radioButton_2")
         self.groupBox_3 = QtWidgets.QGroupBox(self.centralwidget)
-        self.groupBox_3.setGeometry(QtCore.QRect(490, 230, 711, 431))
+        self.groupBox_3.setGeometry(QtCore.QRect(500, 260, 711, 431))
         self.groupBox_3.setStyleSheet(".QGroupBox{border: 2px solid #00FB00;}")
         self.groupBox_3.setTitle("")
         self.groupBox_3.setObjectName("groupBox_3")
@@ -93,23 +65,148 @@ class Ui_MainWindow(object):
         self.l_image.setPixmap(QtGui.QPixmap("11.jpg"))
         self.l_image.setScaledContents(True)
         self.l_image.setObjectName("l_image")
-        self.groupBox_4 = QtWidgets.QGroupBox(self.centralwidget)
-        self.groupBox_4.setGeometry(QtCore.QRect(720, 90, 311, 71))
-        self.groupBox_4.setStyleSheet(".QGroupBox {\n"
+        self.btn_upload = QtWidgets.QPushButton(self.groupBox_3)
+        self.btn_upload.setGeometry(QtCore.QRect(0, 0, 711, 431))
+        font = QtGui.QFont()
+        font.setPointSize(-1)
+        font.setBold(True)
+        font.setItalic(False)
+        font.setWeight(99)
+        self.btn_upload.setFont(font)
+        self.btn_upload.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.btn_upload.setStyleSheet(".QPushButton {\n"
+"    border: 2px solid #fff;\n"
+"    color: #fff;\n"
+"    font-style: normal;\n"
+"    font-weight: 800;\n"
+"    font-size: 24px;\n"
+"}\n"
+".QPushButton:hover {\n"
 "    border: 2px solid #00FB00;\n"
+"    color: #00FB00;\n"
 "}")
-        self.groupBox_4.setTitle("")
-        self.groupBox_4.setObjectName("groupBox_4")
-        self.label_4 = QtWidgets.QLabel(self.groupBox_4)
-        self.label_4.setGeometry(QtCore.QRect(20, 20, 271, 31))
-        self.label_4.setStyleSheet("font-weight: 800;\n"
+        self.btn_upload.setObjectName("btn_upload")
+        self.btn_download = QtWidgets.QPushButton(self.centralwidget)
+        self.btn_download.setGeometry(QtCore.QRect(270, 610, 201, 51))
+        font = QtGui.QFont()
+        font.setPointSize(-1)
+        font.setBold(True)
+        font.setItalic(False)
+        font.setWeight(99)
+        self.btn_download.setFont(font)
+        self.btn_download.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.btn_download.setStyleSheet(".QPushButton {\n"
+"    font-style: normal;\n"
+"    font-weight: 800;\n"
+"    font-size: 18px;\n"
+"    color: #fff;\n"
+"    border: 1px solid #fff;\n"
+"}\n"
+".QPushButton:hover {\n"
+"    border: 1px solid #00FB00;\n"
+"    color: #00FB00;\n"
+"}")
+        self.btn_download.setCheckable(False)
+        self.btn_download.setObjectName("btn_download")
+        self.groupBox_2 = QtWidgets.QGroupBox(self.centralwidget)
+        self.groupBox_2.setGeometry(QtCore.QRect(10, 260, 471, 321))
+        self.groupBox_2.setStyleSheet(".QGroupBox {\n"
+"    border: 2px solid #fff;\n"
+"}")
+        self.groupBox_2.setTitle("")
+        self.groupBox_2.setObjectName("groupBox_2")
+        self.radioButton = QtWidgets.QRadioButton(self.groupBox_2)
+        self.radioButton.setGeometry(QtCore.QRect(40, 190, 361, 21))
+        font = QtGui.QFont()
+        font.setPointSize(-1)
+        font.setBold(True)
+        font.setWeight(99)
+        self.radioButton.setFont(font)
+        self.radioButton.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.radioButton.setStyleSheet(".QRadioButton {\n"
+"    font-weight: 800;\n"
+"    font-size: 20px;\n"
+"    color: #D9D9D9;\n"
+"}\n"
+".QRadioButton:focus {\n"
+"    color: #00FB00;\n"
+"}")
+        self.radioButton.setObjectName("radioButton")
+        self.label_3 = QtWidgets.QLabel(self.groupBox_2)
+        self.label_3.setGeometry(QtCore.QRect(30, 30, 361, 61))
+        font = QtGui.QFont()
+        font.setPointSize(-1)
+        font.setBold(True)
+        font.setItalic(False)
+        font.setWeight(99)
+        self.label_3.setFont(font)
+        self.label_3.setMouseTracking(False)
+        self.label_3.setStyleSheet("font-style: normal;\n"
+"font-weight: 800;\n"
+"font-size: 24px;\n"
+"color: #fff;")
+        self.label_3.setWordWrap(True)
+        self.label_3.setObjectName("label_3")
+        self.radioButton_2 = QtWidgets.QRadioButton(self.groupBox_2)
+        self.radioButton_2.setGeometry(QtCore.QRect(40, 240, 381, 21))
+        font = QtGui.QFont()
+        font.setPointSize(-1)
+        font.setBold(True)
+        font.setWeight(99)
+        self.radioButton_2.setFont(font)
+        self.radioButton_2.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.radioButton_2.setStyleSheet(".QRadioButton {\n"
+"    font-weight: 800;\n"
+"    font-size: 20px;\n"
+"    color: #D9D9D9;\n"
+"}\n"
+".QRadioButton:focus {\n"
+"    color: #00FB00;\n"
+"}")
+        self.radioButton_2.setObjectName("radioButton_2")
+        self.radioButton_3 = QtWidgets.QRadioButton(self.groupBox_2)
+        self.radioButton_3.setGeometry(QtCore.QRect(40, 140, 361, 21))
+        font = QtGui.QFont()
+        font.setPointSize(-1)
+        font.setBold(True)
+        font.setWeight(99)
+        self.radioButton_3.setFont(font)
+        self.radioButton_3.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.radioButton_3.setFocusPolicy(QtCore.Qt.StrongFocus)
+        self.radioButton_3.setStyleSheet(".QRadioButton {\n"
+"    font-weight: 800;\n"
+"    font-size: 20px;\n"
+"    color: #D9D9D9;\n"
+"}\n"
+".QRadioButton:focus {\n"
+"    color: #00FB00;\n"
+"}")
+        self.radioButton_3.setObjectName("radioButton_3")
+        self.Nameprogramm = QtWidgets.QGroupBox(self.centralwidget)
+        self.Nameprogramm.setGeometry(QtCore.QRect(890, 170, 311, 71))
+        self.Nameprogramm.setStyleSheet(".QGroupBox {\n"
+"    border: 2px solid #fff;\n"
+"}")
+        self.Nameprogramm.setTitle("")
+        self.Nameprogramm.setObjectName("Nameprogramm")
+        self.label_5 = QtWidgets.QLabel(self.Nameprogramm)
+        self.label_5.setGeometry(QtCore.QRect(20, 20, 281, 31))
+        self.label_5.setStyleSheet("font-weight: 800;\n"
 "font-size: 35px;\n"
 "color: #00FB00;")
-        self.label_4.setObjectName("label_4")
-        self.btn_download = QtWidgets.QPushButton(self.centralwidget)
-        self.btn_download.setGeometry(QtCore.QRect(950, 700, 181, 31))
-        self.btn_download.setStyleSheet(".QPushButton{color: green;border: 1px solid white}")
-        self.btn_download.setObjectName("btn_download")
+        self.label_5.setObjectName("label_5")
+        self.Background = QtWidgets.QLabel(self.centralwidget)
+        self.Background.setGeometry(QtCore.QRect(-60, -10, 1280, 800))
+        self.Background.setStyleSheet(".QFileDialog { background-color: white }")
+        self.Background.setText("")
+        self.Background.setPixmap(QtGui.QPixmap("Back 2.png"))
+        self.Background.setObjectName("Background")
+        self.Background.raise_()
+        self.groupBox.raise_()
+        self.groupBox_3.raise_()
+        self.btn_download.raise_()
+        self.groupBox_2.raise_()
+        self.Nameprogramm.raise_()
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -120,10 +217,12 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.label_2.setText(_translate("MainWindow", "Общее число моржей на фото"))
         self.label.setText(_translate("MainWindow", "2036"))
+        self.btn_upload.setText(_translate("MainWindow", "Кликните для загрузки фото"))
+        self.btn_download.setText(_translate("MainWindow", "Скачать фото"))
         self.radioButton.setText(_translate("MainWindow", "График распределения моржей"))
         self.label_3.setText(_translate("MainWindow", "Выберите что отразить на фото"))
-        self.radioButton_2.setText(_translate("MainWindow", "Вывести каждого моржа отдельно"))
-        self.label_4.setText(_translate("MainWindow", "Walrus Counter\n"
+        self.radioButton_2.setText(_translate("MainWindow", "Отметить каждого моржа на фото"))
+        self.radioButton_3.setText(_translate("MainWindow", "Изначальное фото"))
+        self.label_5.setText(_translate("MainWindow", "Walrus Counter\n"
 ""))
-        self.btn_download.setText(_translate("MainWindow", "Загрузить фото"))
 from pyqtgraph import PlotWidget
