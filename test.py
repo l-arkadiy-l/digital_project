@@ -136,7 +136,7 @@ class Main(QMainWindow, Ui_MainWindow):
     def open_dialog(self):
         msgBox = QMessageBox(
             QMessageBox.Information,
-            "Фото скачалась",
+            "Фото скачалось",
             f"Фотография скачена и помещена в -> 'C:\\Users\\{getpass.getuser()}\\Downloads\\result.jpg'",
             buttons=QMessageBox.Cancel,
             parent=self,
