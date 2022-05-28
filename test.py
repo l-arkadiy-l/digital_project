@@ -3,14 +3,14 @@ import sys
 
 import cv2
 import numpy as np
-from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget, QFileDialog
+from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget, QFileDialog, QInputDialog, QMessageBox
 from PyQt5 import QtGui
 
 from apps.inter import Ui_MainWindow
 import pyqtgraph as pg
 from random import randint
 from PIL import Image
-
+import getpass
 
 class App(QWidget):
 
@@ -43,12 +43,15 @@ class Main(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
 
+        self.out = None
         self.setupUi(self)
         self.w = None
         self.h = None
         self.setup()
 
     def setup(self):
+        self.setWindowTitle('Walrus Counter')
+        self.setWindowIcon(QtGui.QIcon('apps/icon.png'))
         self.radioButton.clicked.connect(self.show_graph_walrus)
         self.radioButton_2.clicked.connect(self.draw_points_walrus)
         self.radioButton_3.clicked.connect(self.begin_img)
@@ -64,7 +67,7 @@ class Main(QMainWindow, Ui_MainWindow):
     def show_graph_walrus(self):
         self.graphicsView.show()
         self.l_image.hide()
-        self.graphicsView.plot(self.x, [self.h - i for i in self.y], pen=None, symbol='t3',
+        self.graphicsView.plot(self.x, [self.h - i for i in self.y], pen=None, symbol='o',
                                symbolPen=pg.mkPen('y', width=10), symbolBrush=0.2, name='g')
 
     def draw_points(self):
@@ -75,12 +78,13 @@ class Main(QMainWindow, Ui_MainWindow):
 
         # Draw shapes
         for i in range(len(self.x)):
-            cv2.rectangle(shapes, (self.x[i], self.y[i]), (self.x[i] + 20, self.y[i] + 20), (8, 255, 245), cv2.FILLED)
+            # cv2.rectangle(shapes, (self.x[i], self.y[i]), (self.x[i] + 20, self.y[i] + 20), (8, 255, 245), cv2.FILLED)
+            cv2.circle(shapes, (self.x[i], self.y[i]), 15, (8, 255, 255), cv2.FILLED)
 
         # Generate output by blending image with shapes image, using the shapes
         # images also as mask to limit the blending to those parts
         self.out = img.copy()
-        alpha = 0.1
+        alpha = 0.3
         mask = shapes.astype(bool)
         self.out[mask] = cv2.addWeighted(img, alpha, shapes, 1 - alpha, 0)[mask]
 
@@ -95,7 +99,9 @@ class Main(QMainWindow, Ui_MainWindow):
 
     def download_img(self):
         self.draw_points()
-        cv2.imwrite('result.jpg', self.out)
+        picture = Image.open('Output.jpg')
+        picture = picture.save(f"C:\\Users\\{getpass.getuser()}\\Downloads\\result.jpg")
+        self.open_dialog()
 
     def begin_img(self):
         self.graphicsView.hide()
@@ -119,13 +125,26 @@ class Main(QMainWindow, Ui_MainWindow):
         self.l_image.setPixmap(QtGui.QPixmap(self.img))
         self.btn_upload.hide()
 
-        print(self.w, self.h)
         self.x = np.array([randint(0, self.w) for i in range(100)])
         self.y = np.array([randint(0, self.h) for i in range(100)])
         self.radioButton.setEnabled(True)
         self.radioButton_2.setEnabled(True)
         self.radioButton_3.setEnabled(True)
         self.btn_download.setEnabled(True)
+        self.radioButton_3.setChecked(True)
+
+    def open_dialog(self):
+        msgBox = QMessageBox(
+            QMessageBox.Information,
+            "Фото скачалась",
+            f"Фотография качалась и помещена в -> 'C:\\Users\\{getpass.getuser()}\\Downloads\\result.jpg'",
+            buttons=QMessageBox.Cancel,
+            parent=self,
+        )
+        msgBox.setDefaultButton(QMessageBox.No)
+        msgBox.setStyleSheet("QLabel{ color: white}")
+        msgBox.exec_()
+        reply = msgBox.standardButton(msgBox.clickedButton())
 
 
 if __name__ == '__main__':
