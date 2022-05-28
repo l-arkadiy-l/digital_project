@@ -137,7 +137,7 @@ class Main(QMainWindow, Ui_MainWindow):
         msgBox = QMessageBox(
             QMessageBox.Information,
             "Фото скачалась",
-            f"Фотография качалась и помещена в -> 'C:\\Users\\{getpass.getuser()}\\Downloads\\result.jpg'",
+            f"Фотография скачена и помещена в -> 'C:\\Users\\{getpass.getuser()}\\Downloads\\result.jpg'",
             buttons=QMessageBox.Cancel,
             parent=self,
         )
