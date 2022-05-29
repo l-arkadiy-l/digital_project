@@ -1,0 +1,3 @@
+[submodule "Yolo"]
+	path = Yolo
+	url = https://github.com/dimka11/Yolo_Walruses_inference
